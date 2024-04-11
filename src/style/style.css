@@ -384,7 +384,7 @@ table tbody tr:last-child {
 }
 
 .dashboard {
-  display: none;
+  display: block;
 }
 .manage {
   display: none;
@@ -393,5 +393,8 @@ table tbody tr:last-child {
   display: none;
 }
 .approval {
+  display: none;
+}
+.payroll {
   display: none;
 }
