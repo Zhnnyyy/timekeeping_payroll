@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+:root {
+  /* --body-color: #e4e9f7; */
+  --body-color: #fff;
+  /* --sidebar-color: #fff; */
+  --sidebar-color: #859fd0;
+  /* --primary-color: #695cfe; */
+  --primary-color: #ee94ae;
+  /* --primary-color-light: #f6f5ff; */
+  --primary-color-light: #e1edec;
+  --toggle-color: #ddd;
+  /* --text-color: #707070; */
+  --text-color: #fff;
+  --text-color2: #21130d;
+  --text-color3: #ff748c;
+  --btn-color: #cbaacb;
+  --trans1: all 0.5s ease;
+  --trans2: all 1s ease-in-out;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  width: 100%;
+  background: var(--body-color);
+}
+
+.sidebar {
+  user-select: none;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  padding: 10px;
+  background: var(--sidebar-color);
+  transition: var(--trans1);
+}
+.close {
+  width: 70px;
+  transition: var(--trans1);
+}
+.close span {
+  transition: var(--trans2);
+  display: none;
+}
+.close li {
+  text-align: center;
+  transition: var(--trans1);
+}
+.sidebar .header {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 20px;
+  font-size: 35px;
+  position: relative;
+}
+.sidebar .header img {
+  width: 50px;
+}
+.sidebar .header .toggle {
+  position: absolute;
+  right: -25px;
+  width: 24px;
+  text-align: center;
+  height: 24px;
+  color: var(--primary-color);
+  font-size: 16px;
+  background: var(--body-color);
+  border-radius: 100%;
+  transition: var(--trans1);
+}
+.sidebar .header .toggle.toggle-close {
+  transform: rotate(180deg);
+  transition: var(--trans1);
+}
+
+.menus {
+  margin-top: 25px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menus i {
+  text-align: center;
+  width: 30px;
+  font-size: 20px;
+}
+.menus li,
+.bottom-controls li {
+  margin: 5px 0;
+  padding: 10px;
+  list-style: none;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.menus li:hover {
+  background: var(--primary-color);
+  color: var(--text-color2);
+  border-radius: 10px;
+  transition: var(--trans1);
+}
+/* .menus a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+} */
+/* .menus li:hover a {
+  color: var(--sidebar-color);
+} */
+.menus span {
+  padding-left: 15px;
+}
+.bottom-controls {
+  width: 100%;
+  height: 100px;
+}
+.bottom-controls li:hover {
+  background: #ba68c8;
+  color: var(--text-color);
+}
+.container {
+  padding: 20px;
+  height: 100vh;
+  margin-left: 250px;
+  transition: var(--trans1);
+}
+.container.full {
+  margin-left: 70px;
+  transition: var(--trans1);
+}
+
+.dashboard .header {
+  width: 100%;
+  padding: 10px;
+  height: 100px;
+  background: #faedcb;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+.dashboard .card {
+  display: flex;
+  padding: 0 15px;
+  text-align: center;
+}
+.dashboard .card {
+  border-right: 1px solid var(--text-color);
+}
+.dashboard .card:last-child {
+  border: none;
+}
+.dashboard .card-content {
+  margin-left: 10px;
+  color: var(--text-color2);
+}
+.dashboard .card span {
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--text-color2);
+}
+.dashboard .card-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: black;
+  background: #ff8a65;
+}
+.active {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+.active span,
+.active i {
+  color: var(--text-color2);
+}
+
+.manage {
+  display: flex;
+  user-select: none;
+  flex-direction: column;
+  width: 100%;
+}
+.manage .addEmployee {
+  /* align-self: flex-end; */
+  padding: 10px 15px;
+  border: none;
+  background: var(--btn-color);
+  border-radius: 5px;
+  color: var(--text-color2);
+  font-weight: bold;
+  font-size: 16px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9em;
+  overflow-y: scroll;
+  border-radius: 5px 5px 0 0;
+  /* background: var(--sidebar-color); */
+}
+table thead {
+  position: sticky;
+  top: 0;
+}
+table thead tr {
+  background: #ff8a65;
+  color: var(--text-color2);
+  text-align: left;
+}
+table th,
+table td {
+  padding: 12px 15px;
+}
+table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+table tbody tr:nth-of-type(even) {
+  background: #faedcb;
+}
+table tbody tr:last-child {
+  border-bottom: 2px solid var(--primary-color);
+}
+.btn-grp {
+  display: inline-block;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.btn-grp button {
+  color: var(--text-color2);
+  border: none;
+  padding: 7px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.btn-grp button:first-child {
+  background: #c9e4de;
+  border-radius: 5px 0 0 5px;
+}
+
+.btn-grp button:last-child {
+  background: #55cbcd;
+  border-radius: 0 5px 5px 0;
+}
+.table-container {
+  margin: 25px 0;
+  overflow: auto;
+  /* height: 800px; */
+}
+
+.timesheet .header {
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+}
+.timesheet .inputs {
+  font-weight: 500;
+}
+.timesheet input {
+  height: 30px;
+  width: 120px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.timesheet input:hover {
+  border: 2px solid var(--primary-color);
+}
+.timesheet input:focus {
+  border: 2px solid var(--primary-color);
+  outline: none;
+}
+
+/* Approval Container */
+
+.approval-header {
+  padding: 20px;
+}
+.approval-header ul {
+  list-style: none;
+  display: flex;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--text-color2);
+  transition: var(--trans1);
+  cursor: pointer;
+}
+.approval-header .tab {
+  padding-bottom: 10px;
+}
+.approval-header .tab.activetab {
+  border-bottom: 1px solid var(--text-color2);
+  transition: var(--trans1);
+}
+
+.approval-header .separator {
+  margin: 0 10px;
+}
+
+.approval-container .cash-advance-box {
+  display: none;
+}
+
+/* Payroll Content */
+
+.payroll .payrollCalc {
+  align-self: flex-end;
+  padding: 10px 15px;
+  border: none;
+  background: var(--btn-color);
+  border-radius: 5px;
+  color: var(--text-color2);
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+.payroll .payrollCalc i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+.payroll .payroll-header {
+  display: flex;
+}
+.payroll .payroll-header .header {
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+}
+.payroll .inputs {
+  font-weight: 500;
+}
+.payroll .header input {
+  height: 30px;
+  width: 120px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.payroll .header input:hover {
+  border: 2px solid var(--primary-color);
+}
+.payroll .header input:focus {
+  border: 2px solid var(--primary-color);
+  outline: none;
+}
+@media only screen and (max-width: 1200px) {
+  .manage {
+    width: 100%;
+  }
+  .table-container {
+    /* height: 600px; */
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .toggle {
+    display: none;
+  }
+  .container.full {
+    width: 100%;
+  }
+  .manage table {
+    width: 100%;
+  }
+  .table-container {
+    width: 100%;
+  }
+}
+
+.dashboard {
+  display: none;
+}
+.manage {
+  display: none;
+}
+.timesheet {
+  display: none;
+}
+.approval {
+  display: none;
+}
